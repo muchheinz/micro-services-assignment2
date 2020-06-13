@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+service Assignment2 {
+    rpc GetTweet(Empty) returns (stream Tweet) {}
+    rpc GetReddit(Empty) returns (stream RedditData) {}
+}
+
+message Empty{}
+message Tweet{
+    int32 target = 1;
+    int32 id = 2;
+    string date = 3;
+    string flag = 4;
+    string user = 5;
+    string text = 6;
+}
+
+message RedditData{
+    string id = 1;
+    string title = 2;
+    int32 score = 3;
+    string author = 4;
+}
